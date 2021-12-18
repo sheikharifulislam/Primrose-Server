@@ -132,20 +132,7 @@ async function run() {
 
             const result = await allProductCollection.updateOne(filter,updateDoc);
             res.status(200).json(result);
-        });
-
-        app.patch('/create-new-admin', async (req, res) => {
-            const {email} = req.body;
-            
-            const filter = {email: email};          
-            const updateDoc = {
-                $set:{
-                    role: 'admin',
-                }
-            };
-            const result = await allUser.updateOne(filter,updateDoc);            
-            res.status(201).json(result);           
-        })
+        });        
 
         app.patch('/update-product-status',async (req, res) => {
             const {orderId} = req.query;

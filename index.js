@@ -132,7 +132,7 @@ async function run() {
 
             const result = await allProductCollection.updateOne(filter,updateDoc);
             res.status(200).json(result);
-        })
+        });
 
         app.patch('/create-new-admin', async (req, res) => {
             const {email} = req.body;

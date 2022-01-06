@@ -36,7 +36,7 @@ async function run() {
             let result;
             if(limit) {
                 result = await allProductCollection.find({}).limit(limit).toArray();
-                res.status(200).send(result);
+                res.send(result);
             }
             else {
                 result = await allProductCollection.find({}).toArray();
